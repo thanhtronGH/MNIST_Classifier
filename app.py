@@ -21,10 +21,10 @@ forestNumber = model.load_model("forestNumber.pkl")
 
 # Load MINIST image 
 MINISTImg = st.file_uploader("Drag an image here", type=["png", "jpg", "jpeg"])
-
+img_np = np.array(MINISTImg, dtype=np.float32)
 if MINISTImg is not None:
     image = Image.open(MINISTImg)
-    img_flatten = np.array(MINISTImg).flatten()
+    img_flatten = np.array(img_np).flatten()
     # Hiển thị ảnh lên giao diện
     st.image(image, caption="Uploaded image", use_container_width=True)
 
