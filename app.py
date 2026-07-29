@@ -61,7 +61,7 @@ if st.button("Predict"):
         else:
             st.session_state.result = result
     else:
-        st.error("Please upload an image before clicking Predict.")
+        st.error("Please upload an image.")
 
 if "result" in st.session_state:
     st.header(f"A Predicted number is: :green[{st.session_state.result}]")
