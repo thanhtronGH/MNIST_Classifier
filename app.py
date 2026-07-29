@@ -27,7 +27,7 @@ class Node:
 # Load 99% accuracy model
 forestNumber = model.load_model("forestNumber.pkl")
 
-st.title("MNIST Handwritten Digit Classifier")
+st.title("MNIST Clasifier")
 
 # Load MNIST image
 MINISTImg = st.file_uploader(
