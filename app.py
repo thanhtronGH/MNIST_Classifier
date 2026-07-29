@@ -55,15 +55,15 @@ else:
     st.info("Please upload an image.")
 
 # Predict button
-    if st.button("Predict"):
-        if img_flatten is not None:
-            result = myRFLibs.predict_forest(forestNumber, img_flatten)
-            if isinstance(result, (list, np.ndarray)):
-                st.session_state.result = result[0]
-            else:
-                st.session_state.result = result
+if st.button("Predict"):
+    if img_flatten is not None:
+        result = myRFLibs.predict_forest(forestNumber, img_flatten)
+        if isinstance(result, (list, np.ndarray)):
+            st.session_state.result = result[0]
         else:
-            st.error("Please upload an image before clicking Predict.")
+            st.session_state.result = result
+    else:
+        st.error("Please upload an image before clicking Predict.")
 
 if "result" in st.session_state:
     st.header(f"A Predicted number is: :green[{st.session_state.result}]")
