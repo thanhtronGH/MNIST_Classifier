@@ -4,8 +4,6 @@ import RF_Model as model
 import streamlit as st
 from PIL import Image, ImageOps
 
-
-# Init node (Bắt buộc phải giữ lại ở đây để pickle load không bị lỗi __main__)
 class Node:
 
     def __init__(
